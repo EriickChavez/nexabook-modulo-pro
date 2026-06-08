@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:module": "tsc && BUILD_MODE=module vite build",
     "preview": "vite preview"
   },
   "dependencies": {

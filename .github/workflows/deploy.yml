@@ -13,7 +13,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with: { node-version: "20" }
-      - run: npm install && npm run build
+      - run: npm install && npm run build:module
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         with:
