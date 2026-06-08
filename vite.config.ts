@@ -4,14 +4,16 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   base: './',
   plugins: [react()],
+  define: {
+    'typeof require': '"undefined"',
+  },
   build: {
-    // Esto asegura que siempre se genere un bundle limpio e inyectable
     rollupOptions: {
       external: ['react', 'react-dom'],
       input: 'src/main.tsx',
       output: {
         entryFileNames: 'bundle.js',
-        format: 'iife', // Esto es lo que elimina el error de 'require'
+        format: 'iife',
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
