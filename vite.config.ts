@@ -1,22 +1,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+// vite.config.ts
 export default defineConfig({
-  base: './',
   plugins: [react()],
-  define: {
-    'require': 'undefined',
-  },
   build: {
     rollupOptions: {
-      external: ['react', 'react-dom'],
-      input: 'src/main.tsx',
+      // 1. Externaliza TODO lo que esté en node_modules
+      external: ['react', 'react-dom', 'react-dom/client'],
       output: {
-        entryFileNames: 'bundle.js',
         format: 'iife',
+        entryFileNames: 'bundle.js',
         globals: {
-          react: 'React',
+          'react': 'React',
           'react-dom': 'ReactDOM',
+          'react-dom/client': 'ReactDOM'
         },
       },
     },
