@@ -5,7 +5,7 @@ export default defineConfig({
   base: './',
   plugins: [react()],
   define: {
-    'typeof require': '"undefined"',
+    'require': 'undefined',
   },
   build: {
     rollupOptions: {
