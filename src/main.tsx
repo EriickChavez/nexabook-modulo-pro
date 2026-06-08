@@ -3,6 +3,6 @@ import { MonitorWidget } from "./components/MonitorWidget";
 
 // Esto hace que el Hub pueda "ver" tus componentes
 (globalThis as any)["com.nexabook.modulo-pro"] = {
-  MonitorScreen: MonitorScreen,
-  MonitorWidget: MonitorWidget,
+  screen: MonitorScreen,
+  widget: MonitorWidget,
 };
